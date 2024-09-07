@@ -12,6 +12,9 @@ dependencies:
     sdk: flutter
   flutter_tts: ^4.0.2
   speech_to_text: ^7.0.0
+  camera: ^0.10.0
+  permission_handler: ^10.0.0
+  vibration: ^1.7.4
 
 dev_dependencies:
   flutter_test:

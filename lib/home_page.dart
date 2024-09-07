@@ -3,6 +3,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'settings.dart'; // Import the settings page
 import 'habitat.dart'; // Import the habitats page
+import 'generalmode.dart'; // Import the GeneralMode screen
 
 class HomePage extends StatefulWidget {
   @override
@@ -79,6 +80,11 @@ class _HomePageState extends State<HomePage> {
   void _handleCommand(String command) {
     if (command.contains('open mode')) {
       _speak("General Mode activated");
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => GeneralMode()), // Navigate to GeneralMode
+      );
     } else if (command.contains('check habitats')) {
       _speak("Habitats activated");
       Navigator.push(
@@ -136,7 +142,12 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   GestureDetector(
                     onTap: () {
-                      _speak("General Mode activated");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                GeneralMode()), // Navigate to GeneralMode
+                      );
                     },
                     child: Container(
                       width: 140,
