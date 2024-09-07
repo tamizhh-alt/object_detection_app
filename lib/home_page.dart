@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'settings.dart'; // Import the settings page
+import 'habitat.dart'; // Import the habitats page
 
 class HomePage extends StatefulWidget {
   @override
@@ -79,6 +81,11 @@ class _HomePageState extends State<HomePage> {
       _speak("General Mode activated");
     } else if (command.contains('check habitats')) {
       _speak("Habitats activated");
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => HabitatsPage()), // Navigate to HabitatsPage
+      );
     }
     // Add more command handling as needed
   }
@@ -164,6 +171,12 @@ class _HomePageState extends State<HomePage> {
                   GestureDetector(
                     onTap: () {
                       _speak("Habitats activated");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                HabitatsPage()), // Navigate to HabitatsPage
+                      );
                     },
                     child: Container(
                       width: 140,
@@ -221,6 +234,10 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(right: 20, bottom: 20),
               child: IconButton(
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()),
+                  );
                   _speak("Opening settings");
                 },
                 icon: Icon(Icons.settings),
