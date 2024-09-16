@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+<<<<<<< HEAD
+=======
+import 'package:vibration/vibration.dart'; // Import the vibration package
+>>>>>>> origin/master
 import 'home_page.dart'; // Import your HomePage class
 
 class SplashScreen extends StatefulWidget {
@@ -13,6 +17,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+<<<<<<< HEAD
+=======
+
+    // Trigger vibration when the splash screen is opened
+    _vibrateOnAppOpen();
+
+>>>>>>> origin/master
     // Schedule a delay to transition to HomePage
     SchedulerBinding.instance.addPostFrameCallback((_) {
       Future.delayed(const Duration(seconds: 2), () {
@@ -24,6 +35,17 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 
+<<<<<<< HEAD
+=======
+  // Function to handle vibration
+  void _vibrateOnAppOpen() async {
+    bool? hasVibrator = await Vibration.hasVibrator();
+    if (hasVibrator == true) {
+      Vibration.vibrate(duration: 400); // Short vibration for app launch
+    }
+  }
+
+>>>>>>> origin/master
   @override
   Widget build(BuildContext context) {
     return Scaffold(

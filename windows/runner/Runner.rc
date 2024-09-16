@@ -90,12 +90,21 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
+<<<<<<< HEAD
             VALUE "FileDescription", "omnisense" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "omnisense" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "omnisense.exe" "\0"
             VALUE "ProductName", "omnisense" "\0"
+=======
+            VALUE "FileDescription", "omnisense_new" "\0"
+            VALUE "FileVersion", VERSION_AS_STRING "\0"
+            VALUE "InternalName", "omnisense_new" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "omnisense_new.exe" "\0"
+            VALUE "ProductName", "omnisense_new" "\0"
+>>>>>>> origin/master
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

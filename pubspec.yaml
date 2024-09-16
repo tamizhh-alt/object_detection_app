@@ -13,8 +13,16 @@ dependencies:
   flutter_tts: ^4.0.2
   speech_to_text: ^7.0.0
   camera: ^0.10.0
+<<<<<<< HEAD
   permission_handler: ^10.0.0
   vibration: ^1.7.4
+=======
+  permission_handler: ^10.2.0
+  vibration: ^1.7.4
+  tflite: ^1.1.2
+  tflite_flutter: ^0.9.0
+  tflite_flutter_helper: ^0.2.1
+>>>>>>> origin/master
 
 dev_dependencies:
   flutter_test:
@@ -27,5 +35,9 @@ flutter:
   
   assets:
   - assets/images/omnisense_logo.png
+<<<<<<< HEAD
+=======
+  - assets/models/MobileNet_V2.tflite
+>>>>>>> origin/master
   
   

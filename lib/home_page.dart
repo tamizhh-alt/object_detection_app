@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+=======
+import 'package:flutter/material.dart';
+// Import the services library for HapticFeedback
+import 'package:flutter_tts/flutter_tts.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:vibration/vibration.dart'; // Import vibration package for haptic feedback
+>>>>>>> origin/master
 import 'settings.dart'; // Import the settings page
 import 'habitat.dart'; // Import the habitats page
 import 'generalmode.dart'; // Import the GeneralMode screen
@@ -26,6 +34,16 @@ class _HomePageState extends State<HomePage> {
     await _flutterTts.speak(text);
   }
 
+<<<<<<< HEAD
+=======
+  // Function to trigger vibration
+  Future<void> _vibrate(int duration) async {
+    if (await Vibration.hasVibrator() ?? false) {
+      Vibration.vibrate(duration: 150); // Vibrate for specified duration
+    }
+  }
+
+>>>>>>> origin/master
   // Helper function for consistent gradient decoration
   BoxDecoration _uniformGradientDecoration() {
     return const BoxDecoration(
@@ -75,6 +93,10 @@ class _HomePageState extends State<HomePage> {
       _startListening((command) {
         _handleCommand(command);
       });
+<<<<<<< HEAD
+=======
+      _vibrate(100); // Short vibration on voice command button tap
+>>>>>>> origin/master
       setState(() {
         _isListening = true;
       });
@@ -82,19 +104,37 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _handleCommand(String command) {
+<<<<<<< HEAD
     if (command.contains('open mode')) {
+=======
+    if (command.contains('open general mode')) {
+      _vibrate(200); // Medium vibration when switching to General Mode
+>>>>>>> origin/master
       _speak("General Mode activated");
       Navigator.push(
         context,
         MaterialPageRoute(
+<<<<<<< HEAD
             builder: (context) => const GeneralMode()), // Navigate to GeneralMode
       );
     } else if (command.contains('check habitats')) {
+=======
+            builder: (context) =>
+                const GeneralMode()), // Navigate to GeneralMode
+      );
+    } else if (command.contains('open habitats')) {
+      _vibrate(200); // Medium vibration when switching to Habitat Mode
+>>>>>>> origin/master
       _speak("Habitats activated");
       Navigator.push(
         context,
         MaterialPageRoute(
+<<<<<<< HEAD
             builder: (context) => const HabitatsPage()), // Navigate to HabitatsPage
+=======
+            builder: (context) =>
+                const HabitatsPage()), // Navigate to HabitatsPage
+>>>>>>> origin/master
       );
     }
     // Add more command handling as needed
@@ -146,6 +186,11 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   GestureDetector(
                     onTap: () {
+<<<<<<< HEAD
+=======
+                      _vibrate(
+                          100); // Short vibration on General Mode button tap
+>>>>>>> origin/master
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -185,6 +230,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                   GestureDetector(
                     onTap: () {
+<<<<<<< HEAD
+=======
+                      _vibrate(100); // Short vibration on Habitats button tap
+>>>>>>> origin/master
                       _speak("Habitats activated");
                       Navigator.push(
                         context,
@@ -231,10 +280,18 @@ class _HomePageState extends State<HomePage> {
           Align(
             alignment: Alignment.bottomLeft,
             child: Padding(
+<<<<<<< HEAD
               padding: const EdgeInsets.only(left: 20, bottom: 20),
               child: IconButton(
                 onPressed: () {
                   _speak("Entering Home");
+=======
+              padding: const EdgeInsets.only(left: 40, bottom: 10),
+              child: IconButton(
+                onPressed: () {
+                  _vibrate(50); // Short vibration on Home button tap
+                  _speak("In Home");
+>>>>>>> origin/master
                 },
                 icon: const Icon(Icons.home),
                 color: const Color.fromARGB(255, 62, 62, 62),
@@ -246,12 +303,23 @@ class _HomePageState extends State<HomePage> {
           Align(
             alignment: Alignment.bottomRight,
             child: Padding(
+<<<<<<< HEAD
               padding: const EdgeInsets.only(right: 20, bottom: 20),
               child: IconButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const SettingsPage()),
+=======
+              padding: const EdgeInsets.only(right: 40, bottom: 10),
+              child: IconButton(
+                onPressed: () {
+                  _vibrate(50); // Short vibration on Settings button tap
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SettingsPage()),
+>>>>>>> origin/master
                   );
                   _speak("Opening settings");
                 },

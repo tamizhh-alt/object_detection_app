@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // android/build.gradle
 buildscript {
     repositories {
@@ -10,6 +11,8 @@ buildscript {
     }
 }
 
+=======
+>>>>>>> origin/master
 allprojects {
     repositories {
         google()
@@ -17,6 +20,18 @@ allprojects {
     }
 }
 
+<<<<<<< HEAD
 task clean(type: Delete) {
+=======
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+>>>>>>> origin/master
     delete rootProject.buildDir
 }

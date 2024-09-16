@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # omnisense
+=======
+# omnisense_new
+>>>>>>> origin/master
 
 A new Flutter project.
 

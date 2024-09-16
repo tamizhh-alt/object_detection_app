@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:flutter/services.dart'; // Import the services library for HapticFeedback
+>>>>>>> origin/master
 import 'splash_screen.dart'; // Make sure splash_screen.dart exists and is correctly named
 
 void main() {
@@ -13,6 +17,15 @@ class OmniSenseApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+=======
+    // Trigger Haptic Feedback when the app starts
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      HapticFeedback
+          .heavyImpact(); // Provide haptic feedback after the app opens
+    });
+
+>>>>>>> origin/master
     return MaterialApp(
       title: 'OmniSense',
       theme: ThemeData(

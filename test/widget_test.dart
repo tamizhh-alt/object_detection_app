@@ -27,7 +27,10 @@ void main() {
     expect(find.text('1'), findsOneWidget);
   });
 }
+<<<<<<< HEAD
 
 class MyApp {
   const MyApp();
 }
+=======
+>>>>>>> origin/master

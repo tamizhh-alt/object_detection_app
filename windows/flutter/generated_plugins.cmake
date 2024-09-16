@@ -4,10 +4,15 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
 <<<<<<< HEAD
+<<<<<<< HEAD
   flutter_tts
   permission_handler_windows
 =======
 >>>>>>> recovered-branch
+=======
+  flutter_tts
+  permission_handler_windows
+>>>>>>> origin/master
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
