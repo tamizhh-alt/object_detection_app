@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
-import 'splash_screen.dart';
-// Import voice command-related libraries if needed
+import 'splash_screen.dart'; // Make sure splash_screen.dart exists and is correctly named
 
 void main() {
-  // Initialize any global services or configurations if necessary
-  // For example, you could initialize a global instance of a voice command service here
-
-  runApp(MyApp());
+  // You can initialize any services or configurations here if needed
+  runApp(
+      const OmniSenseApp()); // Updated the app class name to OmniSenseApp for consistency
 }
 
-class MyApp extends StatelessWidget {
+class OmniSenseApp extends StatelessWidget {
+  const OmniSenseApp(
+      {super.key}); // Ensure the super key is passed for the stateless widget
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'OmniSense',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.blue, // Define your primary color here
+        visualDensity: VisualDensity
+            .adaptivePlatformDensity, // Adaptive for various platforms
       ),
-      home: SplashScreen(), // Set SplashScreen as the initial route
+      home:
+          const SplashScreen(), // Ensure SplashScreen is properly created as a StatelessWidget
     );
   }
 }

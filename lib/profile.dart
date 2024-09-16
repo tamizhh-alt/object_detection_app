@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
@@ -21,14 +23,14 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
+            const Center(
               child: CircleAvatar(
                 radius: 60,
                 backgroundImage: NetworkImage(
@@ -40,29 +42,29 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Name:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             TextField(
               controller: _nameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Enter your name',
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Email:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Enter your email',
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Center(
               child: ElevatedButton(
                 onPressed: () {
@@ -73,7 +75,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   // For example, you might use a method to save the data to a backend or local storage
                   print('Name: $name, Email: $email');
                 },
-                child: Text('Save'),
+                child: const Text('Save'),
               ),
             ),
           ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HabitatsPage extends StatefulWidget {
+  const HabitatsPage({super.key});
+
   @override
   _HabitatsPageState createState() => _HabitatsPageState();
 }
@@ -15,7 +17,7 @@ class _HabitatsPageState extends State<HabitatsPage> {
 
   // Helper function to show dialog for adding/editing habitats
   Future<void> _showHabitatDialog({String? currentName, int? index}) async {
-    TextEditingController _controller =
+    TextEditingController controller =
         TextEditingController(text: currentName ?? '');
 
     await showDialog(
@@ -24,19 +26,19 @@ class _HabitatsPageState extends State<HabitatsPage> {
         return AlertDialog(
           title: Text(currentName == null ? 'Add Habitat' : 'Edit Habitat'),
           content: TextField(
-            controller: _controller,
-            decoration: InputDecoration(hintText: 'Enter habitat name'),
+            controller: controller,
+            decoration: const InputDecoration(hintText: 'Enter habitat name'),
           ),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog without saving
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () {
-                String newName = _controller.text;
+                String newName = controller.text;
                 if (newName.isNotEmpty) {
                   setState(() {
                     if (currentName == null) {
@@ -48,7 +50,7 @@ class _HabitatsPageState extends State<HabitatsPage> {
                 }
                 Navigator.of(context).pop(); // Close the dialog after saving
               },
-              child: Text('Save'),
+              child: const Text('Save'),
             ),
           ],
         );
@@ -62,13 +64,13 @@ class _HabitatsPageState extends State<HabitatsPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Manage Habitat'),
+          title: const Text('Manage Habitat'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               ListTile(
-                leading: Icon(Icons.edit),
-                title: Text('Edit'),
+                leading: const Icon(Icons.edit),
+                title: const Text('Edit'),
                 onTap: () {
                   Navigator.of(context).pop();
                   _showHabitatDialog(
@@ -77,8 +79,8 @@ class _HabitatsPageState extends State<HabitatsPage> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.delete),
-                title: Text('Delete'),
+                leading: const Icon(Icons.delete),
+                title: const Text('Delete'),
                 onTap: () {
                   setState(() {
                     habitats.removeAt(index); // Delete habitat
@@ -97,13 +99,13 @@ class _HabitatsPageState extends State<HabitatsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Habitats'),
+        title: const Text('Habitats'),
         backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, // Display 2 habitats per row
             crossAxisSpacing: 10.0,
             mainAxisSpacing: 10.0,
@@ -116,7 +118,7 @@ class _HabitatsPageState extends State<HabitatsPage> {
               },
               child: Container(
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [Colors.blue, Colors.lightGreenAccent],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -126,7 +128,7 @@ class _HabitatsPageState extends State<HabitatsPage> {
                 child: Center(
                   child: Text(
                     habitats[index],
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -142,8 +144,8 @@ class _HabitatsPageState extends State<HabitatsPage> {
         onPressed: () {
           _showHabitatDialog(); // Open dialog to add a new habitat
         },
-        child: Icon(Icons.add),
         backgroundColor: Colors.blue,
+        child: const Icon(Icons.add),
       ),
     );
   }

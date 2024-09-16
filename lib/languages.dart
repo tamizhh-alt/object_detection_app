@@ -3,13 +3,15 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class LanguagesPage extends StatefulWidget {
+  const LanguagesPage({super.key});
+
   @override
   _LanguagesPageState createState() => _LanguagesPageState();
 }
 
 class _LanguagesPageState extends State<LanguagesPage> {
   final FlutterTts _flutterTts = FlutterTts();
-  stt.SpeechToText _speech = stt.SpeechToText();
+  final stt.SpeechToText _speech = stt.SpeechToText();
   String _selectedLanguage = 'en-US'; // Default language
 
   @override
@@ -41,20 +43,20 @@ class _LanguagesPageState extends State<LanguagesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Language Preferences'),
+        title: const Text('Language Preferences'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Select Language for Text-to-Speech (TTS) and Speech-to-Text (STT):',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ListTile(
-              title: Text('English'),
+              title: const Text('English'),
               leading: Radio<String>(
                 value: 'en-US',
                 groupValue: _selectedLanguage,
@@ -66,7 +68,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
               ),
             ),
             ListTile(
-              title: Text('Tamil'),
+              title: const Text('Tamil'),
               leading: Radio<String>(
                 value: 'ta-IN',
                 groupValue: _selectedLanguage,
@@ -77,7 +79,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
                 },
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Center(
               child: ElevatedButton(
                 onPressed: () {
@@ -85,7 +87,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
                   print('Selected Language: $_selectedLanguage');
                   // You might want to save this preference in local storage or a backend
                 },
-                child: Text('Save'),
+                child: const Text('Save'),
               ),
             ),
           ],

@@ -3,6 +3,8 @@ import 'package:flutter/scheduler.dart';
 import 'home_page.dart'; // Import your HomePage class
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -13,10 +15,10 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     // Schedule a delay to transition to HomePage
     SchedulerBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(Duration(seconds: 2), () {
+      Future.delayed(const Duration(seconds: 2), () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => const HomePage()),
         );
       });
     });
@@ -44,13 +46,13 @@ class _SplashScreenState extends State<SplashScreen> {
             right: 0,
             child: ShaderMask(
               shaderCallback: (Rect bounds) {
-                return LinearGradient(
+                return const LinearGradient(
                   colors: [Colors.black, Colors.red],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ).createShader(bounds);
               },
-              child: Text(
+              child: const Text(
                 'by CYBERKNIGHTS', // Team name
                 textAlign: TextAlign.center, // Center the text horizontally
                 style: TextStyle(

@@ -3,6 +3,8 @@ import 'package:camera/camera.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class GeneralMode extends StatefulWidget {
+  const GeneralMode({super.key});
+
   @override
   _GeneralModeState createState() => _GeneralModeState();
 }
@@ -51,18 +53,18 @@ class _GeneralModeState extends State<GeneralMode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('General Mode'),
+        title: const Text('General Mode'),
       ),
       body: Center(
         child: _cameraController == null
-            ? CircularProgressIndicator()
+            ? const CircularProgressIndicator()
             : CameraPreview(_cameraController!),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           _speak("General Mode activated");
         },
-        child: Icon(Icons.camera_alt),
+        child: const Icon(Icons.camera_alt),
       ),
     );
   }

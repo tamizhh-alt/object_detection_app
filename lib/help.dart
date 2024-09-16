@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 
 class HelpPage extends StatelessWidget {
+  const HelpPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Help & Guidelines'),
+        title: const Text('Help & Guidelines'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'FAQs & Guidelines',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _faqSection(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _guidelinesSection(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _feedbackSection(),
           ],
         ),
@@ -32,11 +34,11 @@ class HelpPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Frequently Asked Questions (FAQs):',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         _faqItem('What is OmniSense?',
             'OmniSense is an app designed to assist visually impaired individuals by providing object detection, haptic feedback, and audio output to help them navigate their surroundings.'),
         _faqItem('How does OmniSense work?',
@@ -57,12 +59,12 @@ class HelpPage extends StatelessWidget {
         children: [
           Text(
             question,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Text(
             answer,
-            style: TextStyle(fontSize: 14),
+            style: const TextStyle(fontSize: 14),
           ),
         ],
       ),
@@ -70,7 +72,7 @@ class HelpPage extends StatelessWidget {
   }
 
   Widget _guidelinesSection() {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
@@ -105,22 +107,22 @@ class HelpPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Feedback:',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 10),
-        Text(
+        const SizedBox(height: 10),
+        const Text(
           'We value your feedback to improve OmniSense. Please reach out to us with your comments, suggestions, or issues via email at feedback@omnisense.com.',
           style: TextStyle(fontSize: 14),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         ElevatedButton(
           onPressed: () {
             // Implement email client or feedback form
             print('Feedback button pressed');
           },
-          child: Text('Submit Feedback'),
+          child: const Text('Submit Feedback'),
         ),
       ],
     );

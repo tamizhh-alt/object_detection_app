@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
@@ -6,13 +8,15 @@ import 'habitat.dart'; // Import the habitats page
 import 'generalmode.dart'; // Import the GeneralMode screen
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   final FlutterTts _flutterTts = FlutterTts();
-  stt.SpeechToText _speech = stt.SpeechToText();
+  final stt.SpeechToText _speech = stt.SpeechToText();
   bool _isListening = false;
 
   // Function to speak the text
@@ -24,7 +28,7 @@ class _HomePageState extends State<HomePage> {
 
   // Helper function for consistent gradient decoration
   BoxDecoration _uniformGradientDecoration() {
-    return BoxDecoration(
+    return const BoxDecoration(
       gradient: LinearGradient(
         colors: [Colors.blue, Colors.lightGreenAccent],
         begin: Alignment.topLeft,
@@ -83,14 +87,14 @@ class _HomePageState extends State<HomePage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => GeneralMode()), // Navigate to GeneralMode
+            builder: (context) => const GeneralMode()), // Navigate to GeneralMode
       );
     } else if (command.contains('check habitats')) {
       _speak("Habitats activated");
       Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => HabitatsPage()), // Navigate to HabitatsPage
+            builder: (context) => const HabitatsPage()), // Navigate to HabitatsPage
       );
     }
     // Add more command handling as needed
@@ -115,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     width: 400,
                     height: 300,
                     decoration: _uniformGradientDecoration(),
-                    child: Center(
+                    child: const Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -136,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -146,21 +150,21 @@ class _HomePageState extends State<HomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                GeneralMode()), // Navigate to GeneralMode
+                                const GeneralMode()), // Navigate to GeneralMode
                       );
                     },
                     child: Container(
                       width: 140,
                       height: 80,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [Colors.blue, Colors.lightGreenAccent],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -186,21 +190,21 @@ class _HomePageState extends State<HomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                HabitatsPage()), // Navigate to HabitatsPage
+                                const HabitatsPage()), // Navigate to HabitatsPage
                       );
                     },
                     child: Container(
                       width: 140,
                       height: 80,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [Colors.blue, Colors.lightGreenAccent],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -232,7 +236,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   _speak("Entering Home");
                 },
-                icon: Icon(Icons.home),
+                icon: const Icon(Icons.home),
                 color: const Color.fromARGB(255, 62, 62, 62),
                 iconSize: 40, // Larger icon size
               ),
@@ -247,11 +251,11 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SettingsPage()),
+                    MaterialPageRoute(builder: (context) => const SettingsPage()),
                   );
                   _speak("Opening settings");
                 },
-                icon: Icon(Icons.settings),
+                icon: const Icon(Icons.settings),
                 color: const Color.fromARGB(255, 62, 62, 62),
                 iconSize: 40, // Larger icon size
               ),
